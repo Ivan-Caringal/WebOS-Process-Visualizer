@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Scheduling Simulator</title>
+    <link href ="cssgui.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h1>Process Scheduling Simulator</h1>
+        <div class="form-group">
+            <label for="algorithm">Select Algorithm:</label>
+            <select id="algorithm">
+                <option value="RR">Round Robin (RR)</option>
+                <option value="SRTF">Shortest Remaining Time First (SRTF)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="numProcesses">Number of Processes (max 7):</label>
+            <input type="number" id="numProcesses" min="1" max="7">
+        </div>
+        <div class="form-group">
+            <label for="burstTimes">Burst Times (space-separated):</label>
+            <input type="text" id="burstTimes">
+        </div>
+        <div class="form-group">
+            <label for="arrivalTimes">Arrival Times (space-separated):</label>
+            <input type="text" id="arrivalTimes">
+        </div>
+        <div class="form-group" id="quantum-group">
+            <label for="quantum">Quantum (for RR only):</label>
+            <input type="number" id="quantum">
+        </div>
+        <button onclick="runAlgorithm()">Run Algorithm</button>
+        <div id="results">
+            <h2>Results</h2>
+            <div id="ganttChart"></div>
+            <div id="processDetails"></div>
+            <div id="metrics"></div>
+            
+        </div>
+    </div>
+    <script src="os.js"></script>
+
+
+</body>
+</html>
